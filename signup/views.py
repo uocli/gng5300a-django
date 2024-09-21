@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
+
 
 def signup(request):
-    return HttpResponse("Hello from the Signup app!")
+    template = loader.get_template('register.html')
+    return HttpResponse(template.render())
